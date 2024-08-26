@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Css/home.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <x-layout></x-layout>
+    <div class="container">
+        <div class="x-sidebar">
+            <x-sidebar></x-sidebar>
+        </div>
+        <div class="content">
+            koeuk
+        </div>
+    </div>
+    <x-footer></x-footer>
+</body>
+
+
+<script>
+    class XLayout extends HTMLElement {
+        connectedCallback() {
+            fetch('/Layouts/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    this.innerHTML = data;
+                });
+        }
+    }
+
+    customElements.define('x-layout', XLayout);
+
+    class XSidebar extends HTMLElement {
+        connectedCallback() {
+            fetch('/Layouts/sidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    this.innerHTML = data;
+                });
+        }
+    }
+    customElements.define('x-sidebar', XSidebar);
+
+    class Xfooter extends HTMLElement {
+        connectedCallback() {
+            fetch('/Layouts/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    this.innerHTML = data;
+                });
+        }
+    }
+    customElements.define('x-footer', Xfooter);
+</script>
+
+</html>

@@ -1,0 +1,22 @@
+
+body {
+    background-color: rgb(215, 215, 215);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.x-sidebar {
+    width: 20%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 80%;
+}
